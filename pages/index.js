@@ -12,7 +12,7 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:5000/guardian`)
+  const res = await fetch(`http://localhost:3000/api/guardian`)
   const articles = await res.json()
   return {
     props: { articles: articles.articles },
