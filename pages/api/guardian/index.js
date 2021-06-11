@@ -3,16 +3,15 @@ import axios from 'axios'
 // useful Guardian consts
 const guardian_default_img_url =
   'https://assets.guim.co.uk/images/eada8aa27c12fe2d5afa3a89d3fbae0d/fallback-logo.png'
-const guardian_api_key = '8f86228c-9df5-451e-a505-f7979e6ec8a3'
-const guardian_api_url = 'https://content.guardianapis.com'
 
 // get Guardian home articles
 const get_guardian_home = async () => {
   try {
     const response = await axios.get(
-      `${guardian_api_url}/search?api-key=${guardian_api_key}&` +
-        'section=(world|sport|business|technology|politics)&' +
-        'show-blocks=all&page-size=20'
+      `https://content.guardianapis.com/search` +
+        `?api-key=8f86228c-9df5-451e-a505-f7979e6ec8a3` +
+        '&section=(world|sport|business|technology|politics)' +
+        '&show-blocks=all&page-size=20'
     )
     console.log(`Getting Guardian home - ${response.status}`)
     return response.data?.response?.results
