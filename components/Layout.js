@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import { BounceLoader } from 'react-spinners'
 import styles from '../styles/Layout.module.css'
 import Nav from './Nav'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false)
@@ -35,7 +36,7 @@ const Layout = ({ children }) => {
         </div>
       )}
       {!loading && children}
-      <footer className={styles.footer}>Copyright 2021 Yingxuan Guo</footer>
+      <Footer />
     </div>
   )
 }
