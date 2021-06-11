@@ -30,10 +30,9 @@ export const process_guardian_results = data => {
       article.blocks?.main?.elements?.[0]?.assets?.pop?.()?.file ??
       guardian_default_img_url,
     sectionId: article.sectionId === 'sport' ? 'sports' : article.sectionId,
-    date: /\d{4}-\d{2}-\d{2}/.exec(article.webPublicationDate)[0],
+    date: new Date(article.webPublicationDate).toLocaleString(),
     descp: article.blocks?.body?.[0]?.bodyTextSummary,
   }))
-  // TODO: convert UTC to local time and add precise time (hh/mm/ss)
   const vaildRes = results.filter(article =>
     Object.values(article).every(x => x !== undefined)
   )

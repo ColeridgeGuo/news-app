@@ -32,7 +32,7 @@ const Layout = ({ children }) => {
       <Nav />
       {loading && (
         <div className={styles.spinner}>
-          <BounceLoader />
+          <BounceLoader color={'#2b43c4'} />
         </div>
       )}
       {!loading && children}

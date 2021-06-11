@@ -28,7 +28,7 @@ const process_guardian_article = data => {
       data.blocks?.main?.elements?.[0]?.assets?.pop?.()?.file ??
       guardian_default_img_url,
     sectionId: data.sectionId.toLowerCase(),
-    date: /\d{4}-\d{2}-\d{2}/.exec(data.webPublicationDate)[0],
+    date: new Date(data.webPublicationDate).toLocaleString(),
     descp: data.blocks?.body?.[0]?.bodyTextSummary,
   }
 }

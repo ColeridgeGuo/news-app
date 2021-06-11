@@ -27,7 +27,7 @@ export const process_nytimes_search_results = data => {
           article.multimedia?.filter(media => media.width > 2000)[0]?.url
         }` ?? nytimes_default_img_url,
       sectionId: article.section_name?.toLowerCase(),
-      date: /\d{4}-\d{2}-\d{2}/.exec(article.pub_date)[0],
+      date: new Date(article.pub_date).toLocaleString(),
     })),
   }
 }

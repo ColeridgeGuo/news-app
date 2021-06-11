@@ -38,7 +38,7 @@ export const process_nytimes_results = data => {
         article.subsection === 'politics'
           ? article.subsection
           : article.section,
-      date: /\d{4}-\d{2}-\d{2}/.exec(article.published_date)?.[0],
+      date: new Date(article.published_date).toLocaleString(),
       descp: article.abstract,
     })),
   }
