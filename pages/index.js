@@ -1,3 +1,4 @@
+import axios from 'axios'
 import ArticleItem from '../components/ArticleItem.js'
 import articleStyles from '../styles/Article.module.css'
 
@@ -12,9 +13,8 @@ export default function Home({ articles }) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`http://localhost:3000/api/guardian`)
-  const articles = await res.json()
+  const res = await axios.get(`http://localhost:3000/api/guardian`)
   return {
-    props: { articles: articles.articles },
+    props: { articles: res.data.articles },
   }
 }

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { process_guardian_results } from '.'
+import { process_guardian_results } from '..'
 
 // get Guardian articles by section
 const get_guardian_section = async section => {
