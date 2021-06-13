@@ -3,10 +3,24 @@ import articleStyles from '../styles/Article.module.css'
 
 const ArticleItem = ({ article }) => {
   return (
-    <Link href="/article/[id]" as={`/article/${article.id}`}>
+    <Link
+      href="/article/[id]"
+      as={`/article/${encodeURIComponent(article.id)}`}
+    >
       <a className={articleStyles.card}>
-        <h3>{article.title}</h3>
-        <p>{article.descp}</p>
+        <div>
+          <img src={article.image} alt="" className={articleStyles.image}></img>
+        </div>
+        <div className={articleStyles.content}>
+          <div>
+            <h3 className={articleStyles.title}>{article.title}</h3>
+            <p className={articleStyles.descp}>{article.descp}</p>
+          </div>
+          <div className={articleStyles.info}>
+            <p className={articleStyles.date}>{article.date}</p>
+            <p className={articleStyles.section}>{article.sectionId}</p>
+          </div>
+        </div>
       </a>
     </Link>
   )
