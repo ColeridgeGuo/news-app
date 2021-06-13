@@ -1,0 +1,41 @@
+.container {
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-style: italic;
+  margin: 0;
+  font-size: 2rem;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.image {
+  width: 100%;
+}
+.descp {
+  line-height: 1.5;
+  font-size: 1.15rem;
+}
+.descp.collapse {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.expand_arrow {
+  font-size: 1.5rem;
+  align-self: flex-end;
+  cursor: pointer;
+}
