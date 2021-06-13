@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import articleStyles from '../styles/Article.module.css'
+import articleStyles from '../styles/HomeNews.module.css'
 
 const ArticleItem = ({ article }) => {
   return (
@@ -9,7 +9,11 @@ const ArticleItem = ({ article }) => {
     >
       <a className={articleStyles.card}>
         <div>
-          <img src={article.image} alt="" className={articleStyles.image}></img>
+          <img
+            src={article.image}
+            alt="News image"
+            className={articleStyles.image}
+          ></img>
         </div>
         <div className={articleStyles.content}>
           <div>

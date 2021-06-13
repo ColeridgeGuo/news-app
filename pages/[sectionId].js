@@ -1,7 +1,7 @@
 import axios from 'axios'
 import ArticleItem from '../components/ArticleItem.js'
 import { sectionList } from '../components/Nav.js'
-import articleStyles from '../styles/Article.module.css'
+import articleStyles from '../styles/HomeNews.module.css'
 
 export default function Section({ articles }) {
   return (
