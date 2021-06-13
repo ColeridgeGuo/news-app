@@ -1,5 +1,6 @@
 import axios from 'axios'
 import ArticleItem from '../components/ArticleItem.js'
+import { sectionList } from '../components/Nav.js'
 import articleStyles from '../styles/Article.module.css'
 
 export default function Section({ articles }) {
@@ -21,13 +22,11 @@ export const getStaticProps = async ({ params: { sectionId } }) => {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [
-      { params: { sectionId: 'world' } },
-      { params: { sectionId: 'politics' } },
-      { params: { sectionId: 'business' } },
-      { params: { sectionId: 'technology' } },
-      { params: { sectionId: 'sports' } },
-    ],
+    paths: sectionList.map(sec => ({
+      params: {
+        sectionId: sec,
+      },
+    })),
     fallback: false,
   }
 }
