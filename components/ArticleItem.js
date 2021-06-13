@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import articleStyles from '../styles/HomeNews.module.css'
+import styles from '../styles/HomeNews.module.css'
 
 const ArticleItem = ({ article }) => {
   return (
@@ -7,22 +7,22 @@ const ArticleItem = ({ article }) => {
       href="/article/[id]"
       as={`/article/${encodeURIComponent(article.id)}`}
     >
-      <a className={articleStyles.card}>
+      <a className={styles.card}>
         <div>
           <img
             src={article.image}
             alt="News image"
-            className={articleStyles.image}
+            className={styles.image}
           ></img>
         </div>
-        <div className={articleStyles.content}>
+        <div className={styles.content}>
           <div>
-            <h3 className={articleStyles.title}>{article.title}</h3>
-            <p className={articleStyles.descp}>{article.descp}</p>
+            <h3 className={styles.title}>{article.title}</h3>
+            <p className={styles.descp}>{article.descp}</p>
           </div>
-          <div className={articleStyles.info}>
-            <p className={articleStyles.date}>{article.date}</p>
-            <p className={articleStyles.section}>{article.sectionId}</p>
+          <div className={styles.info}>
+            <p className={styles.date}>{article.date}</p>
+            <p className={styles.section}>{article.sectionId}</p>
           </div>
         </div>
       </a>

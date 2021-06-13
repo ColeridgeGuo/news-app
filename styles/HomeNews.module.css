@@ -28,6 +28,8 @@
 }
 
 .image {
+  padding: 0.15rem;
+  border: 1px solid #eaeaea;
   height: 100%;
   margin-right: 1rem;
 }
