@@ -1,13 +1,13 @@
 import axios from 'axios'
-import { useState, useRef, forwardRef } from 'react'
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { useState } from 'react'
+import { IoIosArrowUp } from 'react-icons/io'
 import styles from '../../../styles/DetailNews.module.css'
 
 const article = ({ article }) => {
   const longDescp = article.descp.length > 1000
-  const [expand, setExpand] = useState(false)
-  const toggleExpand = () => {
-    setExpand(!expand)
+  const [open, setOpen] = useState(false)
+  const toggleOpen = () => {
+    setOpen(!open)
   }
 
   return (
@@ -18,24 +18,14 @@ const article = ({ article }) => {
         <p>Icons</p>
       </div>
       <img src={article.image} alt="News image" className={styles.image}></img>
-      {!longDescp && <p className={styles.descp}>{article.descp}</p>}
+      <p className={`${styles.descp} ${!open ? styles.close : ''}`}>
+        {article.descp}
+      </p>
       {longDescp && (
-        <>
-          <p className={`${styles.descp} ${!expand ? styles.collapse : ''}`}>
-            {article.descp}
-          </p>
-          {expand ? (
-            <IoIosArrowUp
-              className={styles.expand_arrow}
-              onClick={toggleExpand}
-            />
-          ) : (
-            <IoIosArrowDown
-              className={styles.expand_arrow}
-              onClick={toggleExpand}
-            />
-          )}
-        </>
+        <IoIosArrowUp
+          className={`${styles.arrow} ${!open ? styles.close : ''}`}
+          onClick={toggleOpen}
+        />
       )}
     </div>
   )

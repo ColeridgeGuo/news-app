@@ -26,16 +26,25 @@
 .descp {
   line-height: 1.5;
   font-size: 1.15rem;
-}
-.descp.collapse {
   overflow: hidden;
   display: -webkit-box;
-  -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
 }
+.descp.close {
+  -webkit-line-clamp: 6;
+}
 
-.expand_arrow {
+.arrow {
   font-size: 1.5rem;
   align-self: flex-end;
   cursor: pointer;
+  min-height: 2rem;
+}
+.arrow.close {
+  transform: rotate(-180deg);
+  -webkit-transform: rotate(-180deg);
+}
+
+.arrow:hover {
+  font-size: 2rem;
 }
