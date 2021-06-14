@@ -1,4 +1,4 @@
-import { FaGithubSquare, FaFacebookSquare } from 'react-icons/fa'
+import { FaFacebookSquare, FaGithubSquare, FaLinkedin } from 'react-icons/fa'
 import footerStyles from '../styles/Footer.module.css'
 
 const Footer = () => {
@@ -11,6 +11,9 @@ const Footer = () => {
       </a>
       <a href="https://www.facebook.com/ColeridgeGuo/" target="_blank">
         <FaFacebookSquare size={iconSize} />
+      </a>
+      <a href="https://www.linkedin.com/in/yingxuan-guo/" target="_blank">
+        <FaLinkedin size={iconSize} />
       </a>
     </footer>
   )

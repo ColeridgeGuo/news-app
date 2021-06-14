@@ -3,8 +3,8 @@ import Router from 'next/router'
 import { useEffect, useState } from 'react'
 import { BounceLoader } from 'react-spinners'
 import styles from '../styles/Layout.module.css'
-import Nav from './Nav'
 import Footer from './Footer'
+import Nav from './Nav'
 
 const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false)
