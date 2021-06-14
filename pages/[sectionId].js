@@ -1,7 +1,14 @@
 import axios from 'axios'
 import ArticleItem from '../components/ArticleItem.js'
-import { sectionList } from '../components/Nav.js'
 import articleStyles from '../styles/HomeNews.module.css'
+
+export const sectionList = [
+  'world',
+  'politics',
+  'business',
+  'technology',
+  'sports',
+]
 
 export default function Section({ articles }) {
   return (
