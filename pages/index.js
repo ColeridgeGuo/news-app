@@ -5,7 +5,7 @@ import articleStyles from '../styles/HomeNews.module.css'
 export default function Home({ articles }) {
   return (
     <div className={articleStyles.grid}>
-      {articles.map(article => (
+      {articles.map((article) => (
         <ArticleItem article={article} key={article.id} />
       ))}
     </div>

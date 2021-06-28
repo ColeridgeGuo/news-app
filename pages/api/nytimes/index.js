@@ -18,21 +18,21 @@ const get_nytimes_home = async () => {
 }
 
 // filter home articles to selected sections
-const filter_nytimes_section = article => {
+const filter_nytimes_section = (article) => {
   const sections = ['world', 'business', 'technology', 'sports']
   return sections.includes(article.section) || article.subsection === 'politics'
 }
 
 // return processed NYTimes results
-export const process_nytimes_results = data => {
+export const process_nytimes_results = (data) => {
   return {
-    articles: data.map(article => ({
+    articles: data.map((article) => ({
       id: article.uri,
       src: 'nytimes',
       url: article.url,
       title: article.title,
       image:
-        article.multimedia?.filter(media => media.width > 2000)[0]?.url ??
+        article.multimedia?.filter((media) => media.width > 2000)[0]?.url ??
         nytimes_default_img_url,
       sectionId:
         article.subsection === 'politics'

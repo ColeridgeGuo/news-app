@@ -8,7 +8,7 @@ const Nav = () => {
       <ul>
         {
           // list out sections in the navbar
-          ['', ...sectionList].map(sec => (
+          ['', ...sectionList].map((sec) => (
             <li key={sec}>
               <Link href={`/${sec}`}>
                 {sec.charAt(0).toUpperCase() + sec.substr(1).toLowerCase() ||

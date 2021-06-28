@@ -13,7 +13,7 @@ export const sectionList = [
 export default function Section({ articles }) {
   return (
     <div className={articleStyles.grid}>
-      {articles.map(article => (
+      {articles.map((article) => (
         <ArticleItem article={article} key={article.id} />
       ))}
     </div>
@@ -29,7 +29,7 @@ export const getStaticProps = async ({ params: { sectionId } }) => {
 
 export const getStaticPaths = async () => {
   return {
-    paths: sectionList.map(sec => ({
+    paths: sectionList.map((sec) => ({
       params: {
         sectionId: sec,
       },

@@ -2,7 +2,7 @@ import axios from 'axios'
 import { process_nytimes_results } from '..'
 
 // get NYTimes articles by section
-const get_nytimes_section = async section => {
+const get_nytimes_section = async (section) => {
   try {
     const response = await axios.get(
       `https://api.nytimes.com/svc/topstories/v2/${section}.json?` +

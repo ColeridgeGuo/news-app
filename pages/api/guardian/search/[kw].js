@@ -2,7 +2,7 @@ import axios from 'axios'
 import { process_guardian_results } from '..'
 
 // search Guardian articles by keyword
-const search_guardian_results = async query => {
+const search_guardian_results = async (query) => {
   try {
     const response = await axios.get(
       `https://content.guardianapis.com/search?q=${query}` +

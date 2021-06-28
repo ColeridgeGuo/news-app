@@ -4,7 +4,7 @@ const nytimes_default_img_url =
   'https://upload.wikimedia.org/wikipedia/commons/0/0e/Nytimes_hq.jpg'
 
 // get NYTimes article by url
-const get_nytimes_article = async articleId => {
+const get_nytimes_article = async (articleId) => {
   try {
     const response = await axios.get(
       `https://api.nytimes.com/svc/search/v2/articlesearch.json` +
@@ -18,7 +18,7 @@ const get_nytimes_article = async articleId => {
 }
 
 // return processed NYTimes article
-const process_nytimes_article = data => {
+const process_nytimes_article = (data) => {
   return {
     id: data.uri,
     src: 'nytimes',
@@ -26,7 +26,7 @@ const process_nytimes_article = data => {
     title: data.headline?.main,
     image:
       `https://static01.nyt.com/${
-        data.multimedia?.filter(media => media.width > 2000)[0]?.url
+        data.multimedia?.filter((media) => media.width > 2000)[0]?.url
       }` ?? nytimes_default_img_url,
     sectionId: data.section_name?.toLowerCase(),
     date: new Date(data.pub_date).toLocaleString(),

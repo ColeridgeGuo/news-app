@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // search NYTimes articles based on query
-const search_nytimes_results = async query => {
+const search_nytimes_results = async (query) => {
   try {
     const response = await axios.get(
       `https://api.nytimes.com/svc/search/v2/articlesearch.json` +
@@ -15,16 +15,16 @@ const search_nytimes_results = async query => {
 }
 
 // return processed NYTimes search results
-export const process_nytimes_search_results = data => {
+export const process_nytimes_search_results = (data) => {
   return {
-    articles: data.map(article => ({
+    articles: data.map((article) => ({
       id: article.uri,
       src: 'nytimes',
       url: article.web_url,
       title: article.headline?.main,
       image:
         `https://www.nytimes.com/${
-          article.multimedia?.filter(media => media.width > 2000)[0]?.url
+          article.multimedia?.filter((media) => media.width > 2000)[0]?.url
         }` ?? nytimes_default_img_url,
       sectionId: article.section_name?.toLowerCase(),
       date: new Date(article.pub_date).toLocaleString(),

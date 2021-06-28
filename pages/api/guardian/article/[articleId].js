@@ -4,7 +4,7 @@ const guardian_default_img_url =
   'https://assets.guim.co.uk/images/eada8aa27c12fe2d5afa3a89d3fbae0d/fallback-logo.png'
 
 // get Guardian article by id
-const get_guardian_article = async articleId => {
+const get_guardian_article = async (articleId) => {
   try {
     const response = await axios.get(
       `https://content.guardianapis.com/${articleId}` +
@@ -18,7 +18,7 @@ const get_guardian_article = async articleId => {
 }
 
 // return processed Guardian article
-const process_guardian_article = data => {
+const process_guardian_article = (data) => {
   return {
     id: data.id,
     src: 'guardian',

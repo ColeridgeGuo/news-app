@@ -20,8 +20,8 @@ const get_guardian_home = async () => {
 }
 
 // return processed Guardian results
-export const process_guardian_results = data => {
-  const results = data.map(article => ({
+export const process_guardian_results = (data) => {
+  const results = data.map((article) => ({
     id: article.id,
     url: article.webUrl,
     src: 'guardian',
@@ -33,8 +33,8 @@ export const process_guardian_results = data => {
     date: new Date(article.webPublicationDate).toLocaleString(),
     descp: article.blocks?.body?.[0]?.bodyTextSummary,
   }))
-  const vaildRes = results.filter(article =>
-    Object.values(article).every(x => x !== undefined)
+  const vaildRes = results.filter((article) =>
+    Object.values(article).every((x) => x !== undefined)
   )
   return { articles: vaildRes.slice(0, 10) }
 }
