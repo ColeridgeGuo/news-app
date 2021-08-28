@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
   const [loading, setLoading] = useState(false)
 
   useEffect(() => {
+    // Activate/Deactivate loading spinner
     const start = () => setLoading(true)
     const end = () => setLoading(false)
     Router.events.on('routeChangeStart', start)
